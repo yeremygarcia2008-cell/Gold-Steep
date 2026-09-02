@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: parra-es-hermoso
+    name: gold-steep
     runtime: node
     plan: free
     buildCommand: npm install

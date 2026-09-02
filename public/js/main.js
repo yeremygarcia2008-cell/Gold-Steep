@@ -1,8 +1,8 @@
 /* ========================================
-   PARRA ES HERMOSO - JavaScript Principal
+   GOLD STEEP - JavaScript Principal
    ======================================== */
 
-let cart = JSON.parse(localStorage.getItem('parraCart')) || [];
+let cart = JSON.parse(localStorage.getItem('goldCart')) || [];
 let siteSettings = {};
 let allProducts = [];
 
@@ -143,7 +143,7 @@ function applySettings() {
         const contactWa = document.getElementById('contactWhatsapp');
         const whatsappFloat = document.getElementById('whatsappFloat');
         const checkoutWhatsapp = document.getElementById('checkoutWhatsapp');
-        const msg = encodeURIComponent('Hola, me interesa la joyería de Parra es Hermoso');
+        const msg = encodeURIComponent('Hola, me interesa la joyería de Gold Steep');
         if (contactWa) contactWa.href = `https://wa.me/${wa}?text=${msg}`;
         if (whatsappFloat) whatsappFloat.href = `https://wa.me/${wa}?text=${msg}`;
         if (checkoutWhatsapp) checkoutWhatsapp.href = `https://wa.me/${wa}`;
@@ -386,7 +386,7 @@ function removeFromCart(id) {
 }
 
 function saveCart() {
-    localStorage.setItem('parraCart', JSON.stringify(cart));
+    localStorage.setItem('goldCart', JSON.stringify(cart));
 }
 
 function updateCartUI() {

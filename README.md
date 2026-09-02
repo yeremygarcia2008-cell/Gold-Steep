@@ -1,4 +1,4 @@
-# Parra es Hermoso - Joyeria Oro Laminado 18K
+# Gold Steep - Joyeria Oro Laminado 18K
 
 Tienda en linea de joyeria con panel de administracion completo.
 

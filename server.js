@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(session({
-    secret: 'parra-es-hermoso-secret-2026',
+    secret: 'gold-steep-secret-2026',
     resave: false,
     saveUninitialized: false,
     cookie: { maxAge: 24 * 60 * 60 * 1000 }
@@ -374,7 +374,7 @@ function initializeData() {
         writeJSON('testimonials.json', [
             { id: 1, name: 'María Fernández', city: 'Bogotá', text: 'Mi collar Milano es hermoso, lo uso todos los días y sigue como nuevo después de 6 meses. ¡Excelente calidad!', stars: 5, active: true },
             { id: 2, name: 'Valentina López', city: 'Medellín', text: 'Compré un set completo para mi graduación y todos preguntaron de qué joyería era. El precio es increíble por la calidad.', stars: 5, active: true },
-            { id: 3, name: 'Andrea Gutiérrez', city: 'Cali', text: 'Soy alérgica al níquel y con las joyas de Parra es Hermoso no he tenido ningún problema. ¡Las recomiendo totalmente!', stars: 5, active: true }
+            { id: 3, name: 'Andrea Gutiérrez', city: 'Cali', text: 'Soy alérgica al níquel y con las joyas de Gold Steep no he tenido ningún problema. ¡Las recomiendo totalmente!', stars: 5, active: true }
         ]);
         console.log('  ✓ Testimonios iniciales creados');
     }
@@ -383,16 +383,16 @@ function initializeData() {
     if (!fs.existsSync(path.join(__dirname, 'data', 'settings.json')) || Object.keys(readJSON('settings.json')).length === 0) {
         writeJSON('settings.json', {
             business: {
-                name: 'Parra es Hermoso',
+                name: 'Gold Steep',
                 description: 'Joyería en oro laminado 18K de alta calidad a precios accesibles',
                 whatsapp: '573001234567',
-                email: 'info@parraeshermoso.com',
+                email: 'info@goldsteep.com',
                 address: 'Colombia'
             },
             social: {
-                instagram: 'https://instagram.com/parraeshermoso',
-                facebook: 'https://facebook.com/parraeshermoso',
-                tiktok: 'https://tiktok.com/@parraeshermoso'
+                instagram: 'https://instagram.com/goldsteep',
+                facebook: 'https://facebook.com/goldsteep',
+                tiktok: 'https://tiktok.com/@goldsteep'
             },
             design: {
                 colors: {
@@ -416,7 +416,7 @@ function initializeData() {
                 benefits: { visible: true },
                 products: { visible: true, title: 'Nuestra Colección', subtitle: 'Descubre piezas únicas que combinan elegancia y accesibilidad' },
                 about: { visible: true, title: '¿Por qué Oro Laminado 18K?', text: 'El oro laminado 18K es una técnica premium que fusiona una capa gruesa de oro puro sobre un metal base, creando piezas con la misma apariencia y brillo del oro macizo.' },
-                testimonials: { visible: true, title: 'Lo que dicen nuestras clientas', subtitle: 'Historias reales de mujeres que brillan con Parra es Hermoso' },
+                testimonials: { visible: true, title: 'Lo que dicen nuestras clientas', subtitle: 'Historias reales de mujeres que brillan con Gold Steep' },
                 contact: { visible: true, title: '¿Tienes alguna pregunta?', text: 'Estamos aquí para ayudarte. Escríbenos por WhatsApp y te atenderemos de inmediato.' }
             }
         });
@@ -436,11 +436,11 @@ dirs.forEach(dir => {
 // ========================================
 // START SERVER
 // ========================================
-console.log('\n  Inicializando Parra es Hermoso...');
+console.log('\n  Inicializando Gold Steep...');
 initializeData();
 
 app.listen(PORT, () => {
-    console.log(`\n✨ Parra es Hermoso - Servidor activo`);
+    console.log(`\n✨ Gold Steep - Servidor activo`);
     console.log(`   Tienda:  http://localhost:${PORT}`);
     console.log(`   Admin:   http://localhost:${PORT}/admin`);
     console.log(`\n   Usuario: admin`);

@@ -1,9 +1,9 @@
 @echo off
-title Parra es Hermoso - Servidor de Joyeria
+title Gold Steep - Servidor de Joyeria
 color 0A
 echo.
 echo  ========================================
-echo    PARRA ES HERMOSO - Panel de Joyeria
+echo    GOLD STEEP - Panel de Joyeria
 echo  ========================================
 echo.
 echo  Iniciando servidor...
