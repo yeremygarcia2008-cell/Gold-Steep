@@ -1,0 +1,12 @@
+node_modules/
+uploads/logo/*
+uploads/banners/*
+uploads/products/*
+!uploads/.gitkeep
+*.log
+npm-debug.log*
+.env
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "name": "Collares",
+    "slug": "collares",
+    "order": 1,
+    "active": true
+  },
+  {
+    "id": 2,
+    "name": "Pulseras",
+    "slug": "pulseras",
+    "order": 2,
+    "active": true
+  },
+  {
+    "id": 3,
+    "name": "Aretes",
+    "slug": "aretes",
+    "order": 3,
+    "active": true
+  },
+  {
+    "id": 4,
+    "name": "Anillos",
+    "slug": "anillos",
+    "order": 4,
+    "active": true
+  }
+]

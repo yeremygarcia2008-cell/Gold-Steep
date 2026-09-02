@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin | Parra es Hermoso</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/admin/css/admin.css">
+</head>
+<body>
+    <!-- Login Screen -->
+    <div id="loginScreen" class="login-screen">
+        <div class="login-card">
+            <div class="login-logo">
+                <i class="fas fa-gem"></i>
+            </div>
+            <h1>Parra es Hermoso</h1>
+            <p>Panel de Administración</p>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label><i class="fas fa-user"></i> Usuario</label>
+                    <input type="text" id="loginUser" placeholder="admin" required>
+                </div>
+                <div class="form-group">
+                    <label><i class="fas fa-lock"></i> Contraseña</label>
+                    <input type="password" id="loginPass" placeholder="••••••" required>
+                </div>
+                <div id="loginError" class="alert alert-error" style="display:none;"></div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                </button>
+            </form>
+            <a href="/" class="login-back"><i class="fas fa-arrow-left"></i> Volver a la tienda</a>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="admin-panel" style="display:none;">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-gem"></i>
+                <span>Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="dashboard">
+                    <i class="fas fa-th-large"></i> Dashboard
+                </a>
+                <a href="#" class="nav-item" data-page="products">
+                    <i class="fas fa-box"></i> Productos
+                </a>
+                <a href="#" class="nav-item" data-page="categories">
+                    <i class="fas fa-tags"></i> Categorías
+                </a>
+                <a href="#" class="nav-item" data-page="testimonials">
+                    <i class="fas fa-comments"></i> Testimonios
+                </a>
+                <a href="#" class="nav-item" data-page="design">
+                    <i class="fas fa-palette"></i> Diseño
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <i class="fas fa-cog"></i> Configuración
+                </a>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="/" target="_blank" class="nav-item">
+                    <i class="fas fa-external-link-alt"></i> Ver Tienda
+                </a>
+                <a href="#" class="nav-item" id="logoutBtn">
+                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Top Bar -->
+            <div class="topbar">
+                <button class="menu-toggle-admin" id="sidebarToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 id="pageTitle">Dashboard</h2>
+                <div class="topbar-actions">
+                    <span id="adminUser"><i class="fas fa-user-circle"></i> admin</span>
+                </div>
+            </div>
+
+            <!-- Pages Container -->
+            <div class="page-container" id="pageContainer">
+
+                <!-- DASHBOARD -->
+                <div class="page active" id="page-dashboard">
+                    <div class="stats-grid" id="statsGrid">
+                        <div class="stat-card">
+                            <div class="stat-icon"><i class="fas fa-box"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statProducts">0</span>
+                                <span class="stat-label">Productos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon green"><i class="fas fa-check-circle"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statActive">0</span>
+                                <span class="stat-label">Activos</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon gold"><i class="fas fa-star"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statFeatured">0</span>
+                                <span class="stat-label">Destacados</span>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon pink"><i class="fas fa-comments"></i></div>
+                            <div class="stat-info">
+                                <span class="stat-number" id="statTestimonials">0</span>
+                                <span class="stat-label">Testimonios</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-clock"></i> Últimos Productos Agregados</h3>
+                        </div>
+                        <div class="card-body">
+                            <table class="table" id="recentProductsTable">
+                                <thead>
+                                    <tr><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Estado</th></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PRODUCTS -->
+                <div class="page" id="page-products">
+                    <div class="page-header">
+                        <h3>Gestión de Productos</h3>
+                        <button class="btn btn-primary" onclick="showProductForm()">
+                            <i class="fas fa-plus"></i> Nuevo Producto
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table" id="productsTable">
+                                <thead>
+                                    <tr><th>Imagen</th><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Destacado</th><th>Estado</th><th>Acciones</th></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORIES -->
+                <div class="page" id="page-categories">
+                    <div class="page-header">
+                        <h3>Gestión de Categorías</h3>
+                        <button class="btn btn-primary" onclick="showCategoryForm()">
+                            <i class="fas fa-plus"></i> Nueva Categoría
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table" id="categoriesTable">
+                                <thead>
+                                    <tr><th>Nombre</th><th>Slug</th><th>Orden</th><th>Estado</th><th>Acciones</th></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TESTIMONIALS -->
+                <div class="page" id="page-testimonials">
+                    <div class="page-header">
+                        <h3>Gestión de Testimonios</h3>
+                        <button class="btn btn-primary" onclick="showTestimonialForm()">
+                            <i class="fas fa-plus"></i> Nuevo Testimonio
+                        </button>
+                    </div>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table" id="testimonialsTable">
+                                <thead>
+                                    <tr><th>Nombre</th><th>Ciudad</th><th>Texto</th><th>Estrellas</th><th>Acciones</th></tr>
+                                </thead>
+                                <tbody></tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESIGN -->
+                <div class="page" id="page-design">
+                    <div class="page-header">
+                        <h3>Personalización del Diseño</h3>
+                        <button class="btn btn-primary" onclick="saveDesign()">
+                            <i class="fas fa-save"></i> Guardar Cambios
+                        </button>
+                    </div>
+
+                    <!-- Colors -->
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-palette"></i> Colores</h3></div>
+                        <div class="card-body">
+                            <div class="color-grid">
+                                <div class="color-field">
+                                    <label>Color Primario (Dorado)</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorPrimary" value="#D4AF37">
+                                        <input type="text" id="colorPrimaryHex" value="#D4AF37" class="hex-input">
+                                    </div>
+                                </div>
+                                <div class="color-field">
+                                    <label>Color Secundario</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorSecondary" value="#1A1A1A">
+                                        <input type="text" id="colorSecondaryHex" value="#1A1A1A" class="hex-input">
+                                    </div>
+                                </div>
+                                <div class="color-field">
+                                    <label>Color de Acento</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorAccent" value="#E91E63">
+                                        <input type="text" id="colorAccentHex" value="#E91E63" class="hex-input">
+                                    </div>
+                                </div>
+                                <div class="color-field">
+                                    <label>Fondo Principal</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorBackground" value="#FFFFFF">
+                                        <input type="text" id="colorBackgroundHex" value="#FFFFFF" class="hex-input">
+                                    </div>
+                                </div>
+                                <div class="color-field">
+                                    <label>Color de Texto</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorText" value="#1A1A1A">
+                                        <input type="text" id="colorTextHex" value="#1A1A1A" class="hex-input">
+                                    </div>
+                                </div>
+                                <div class="color-field">
+                                    <label>Fondo Alternativo</label>
+                                    <div class="color-input">
+                                        <input type="color" id="colorBgAlt" value="#F5F5F5">
+                                        <input type="text" id="colorBgAltHex" value="#F5F5F5" class="hex-input">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Fonts -->
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-font"></i> Tipografía</h3></div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Fuente de Títulos</label>
+                                    <select id="fontDisplay">
+                                        <option value="Playfair Display">Playfair Display</option>
+                                        <option value="Cormorant Garamond">Cormorant Garamond</option>
+                                        <option value="Lora">Lora</option>
+                                        <option value="Merriweather">Merriweather</option>
+                                        <option value="Poppins">Poppins</option>
+                                        <option value="Montserrat">Montserrat</option>
+                                        <option value="Raleway">Raleway</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fuente del Cuerpo</label>
+                                    <select id="fontBody">
+                                        <option value="Poppins">Poppins</option>
+                                        <option value="Inter">Inter</option>
+                                        <option value="Roboto">Roboto</option>
+                                        <option value="Open Sans">Open Sans</option>
+                                        <option value="Lato">Lato</option>
+                                        <option value="Montserrat">Montserrat</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Images -->
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-image"></i> Imágenes</h3></div>
+                        <div class="card-body">
+                            <div class="upload-grid">
+                                <div class="upload-field">
+                                    <label>Logo</label>
+                                    <div class="upload-box" id="logoUpload">
+                                        <img id="logoPreview" src="" style="display:none; max-height:80px;">
+                                        <div class="upload-placeholder" id="logoPlaceholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Subir Logo</p>
+                                        </div>
+                                        <input type="file" accept="image/*" onchange="uploadImage(this, 'logo', 'logoPreview', 'logoPlaceholder')">
+                                    </div>
+                                </div>
+                                <div class="upload-field">
+                                    <label>Favicon</label>
+                                    <div class="upload-box" id="faviconUpload">
+                                        <img id="faviconPreview" src="" style="display:none; max-height:80px;">
+                                        <div class="upload-placeholder" id="faviconPlaceholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Subir Favicon</p>
+                                        </div>
+                                        <input type="file" accept="image/*" onchange="uploadImage(this, 'favicon', 'faviconPreview', 'faviconPlaceholder')">
+                                    </div>
+                                </div>
+                                <div class="upload-field">
+                                    <label>Imagen Hero (Banner)</label>
+                                    <div class="upload-box wide" id="heroUpload">
+                                        <img id="heroPreview" src="" style="display:none; max-height:120px;">
+                                        <div class="upload-placeholder" id="heroPlaceholder">
+                                            <i class="fas fa-cloud-upload-alt"></i>
+                                            <p>Subir Banner</p>
+                                        </div>
+                                        <input type="file" accept="image/*" onchange="uploadImage(this, 'banner', 'heroPreview', 'heroPlaceholder')">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sections visibility -->
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-eye"></i> Secciones Visibles</h3></div>
+                        <div class="card-body">
+                            <div class="toggle-grid">
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionHero" checked> Hero / Banner Principal
+                                </label>
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionBenefits" checked> Beneficios
+                                </label>
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionProducts" checked> Productos
+                                </label>
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionAbout" checked> Sobre Oro Laminado
+                                </label>
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionTestimonials" checked> Testimonios
+                                </label>
+                                <label class="toggle-item">
+                                    <input type="checkbox" id="sectionContact" checked> Contacto / WhatsApp
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SETTINGS -->
+                <div class="page" id="page-settings">
+                    <div class="page-header">
+                        <h3>Configuración del Negocio</h3>
+                        <button class="btn btn-primary" onclick="saveSettings()">
+                            <i class="fas fa-save"></i> Guardar Cambios
+                        </button>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-store"></i> Datos del Negocio</h3></div>
+                        <div class="card-body">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label>Nombre del Negocio</label>
+                                    <input type="text" id="settBusinessName" placeholder="Parra es Hermoso">
+                                </div>
+                                <div class="form-group">
+                                    <label>Descripción</label>
+                                    <input type="text" id="settBusinessDesc" placeholder="Joyería en oro laminado 18K">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label><i class="fab fa-whatsapp"></i> Número de WhatsApp</label>
+                                    <input type="text" id="settWhatsapp" placeholder="573001234567">
+                                </div>
+                                <div class="form-group">
+                                    <label><i class="fas fa-envelope"></i> Correo Electrónico</label>
+                                    <input type="email" id="settEmail" placeholder="info@parraeshermoso.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fas fa-map-marker-alt"></i> Dirección</label>
+                                <input type="text" id="settAddress" placeholder="Colombia">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-share-alt"></i> Redes Sociales</h3></div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label><i class="fab fa-instagram"></i> Instagram URL</label>
+                                <input type="url" id="settInstagram" placeholder="https://instagram.com/tu-usuario">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-facebook-f"></i> Facebook URL</label>
+                                <input type="url" id="settFacebook" placeholder="https://facebook.com/tu-pagina">
+                            </div>
+                            <div class="form-group">
+                                <label><i class="fab fa-tiktok"></i> TikTok URL</label>
+                                <input type="url" id="settTiktok" placeholder="https://tiktok.com/@tu-usuario">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div class="card-header"><h3><i class="fas fa-edit"></i> Textos de la Tienda</h3></div>
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label>Título del Hero</label>
+                                <input type="text" id="settHeroTitle" placeholder="Brilla con la elegancia del Oro 18K">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtítulo del Hero</label>
+                                <textarea id="settHeroSubtitle" rows="2" placeholder="Joyería en oro laminado..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Texto del Botón Hero</label>
+                                <input type="text" id="settHeroCta" placeholder="Explora nuestra colección">
+                            </div>
+                            <div class="form-group">
+                                <label>Título de Productos</label>
+                                <input type="text" id="settProductsTitle" placeholder="Nuestra Colección">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtítulo de Productos</label>
+                                <input type="text" id="settProductsSubtitle" placeholder="Descubre piezas únicas...">
+                            </div>
+                            <div class="form-group">
+                                <label>Título Sección Nosotros</label>
+                                <input type="text" id="settAboutTitle" placeholder="¿Por qué Oro Laminado 18K?">
+                            </div>
+                            <div class="form-group">
+                                <label>Texto Sección Nosotros</label>
+                                <textarea id="settAboutText" rows="3" placeholder="El oro laminado 18K es..."></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label>Título de Testimonios</label>
+                                <input type="text" id="settTestimonialsTitle" placeholder="Lo que dicen nuestras clientas">
+                            </div>
+                            <div class="form-group">
+                                <label>Subtítulo de Testimonios</label>
+                                <input type="text" id="settTestimonialsSubtitle" placeholder="Historias reales...">
+                            </div>
+                            <div class="form-group">
+                                <label>Título de Contacto</label>
+                                <input type="text" id="settContactTitle" placeholder="¿Tienes alguna pregunta?">
+                            </div>
+                            <div class="form-group">
+                                <label>Texto de Contacto</label>
+                                <textarea id="settContactText" rows="2" placeholder="Estamos aquí para ayudarte..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Container -->
+    <div class="modal" id="modal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle">Modal</h3>
+                <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body" id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast" id="toast">
+        <i class="fas fa-check-circle"></i>
+        <span id="toastMessage">Guardado</span>
+    </div>
+
+    <script src="/admin/js/admin.js"></script>
+</body>
+</html>

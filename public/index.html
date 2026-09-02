@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parra es Hermoso | Joyería Oro Laminado 18K</title>
+    <meta name="description" content="Joyería en oro laminado 18K de alta calidad. Collares, pulseras, aretes y anillos elegantes a precios accesibles.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link id="googleFonts" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link id="dynamicFavicon" rel="icon" type="image/png" href="">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav container">
+            <a href="#" class="logo">
+                <img id="headerLogo" src="" alt="Logo" class="logo-img" style="display:none; height:40px; margin-right:10px;">
+                <span class="logo-icon" id="logoIcon"><i class="fas fa-gem"></i></span>
+                <span class="logo-text" id="businessName">Parra es Hermoso</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                <li><a href="#productos" class="nav-link">Productos</a></li>
+                <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                <li><a href="#testimonios" class="nav-link">Testimonios</a></li>
+                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="cart-btn" id="cartBtn">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
+                <button class="menu-toggle" id="menuToggle">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio" data-section="hero">
+        <div class="hero-content">
+            <h1 class="hero-title" id="heroTitle">Brilla con la elegancia del <span class="gold-text">Oro 18K</span></h1>
+            <p class="hero-subtitle" id="heroSubtitle">Joyería en oro laminado de alta calidad a precios accesibles. Porque mereces lucir hermosa todos los días.</p>
+            <a href="#productos" class="btn btn-primary" id="heroCta">Explora nuestra colección</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-shape" id="heroShape"></div>
+        </div>
+    </section>
+
+    <!-- Beneficios -->
+    <section class="benefits" data-section="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-award"></i></div>
+                    <h3>Oro 18K Genuino</h3>
+                    <p>75% de oro puro con acabado impecable</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Garantía de Calidad</h3>
+                    <p>Piezas duraderas que mantienen su brillo</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-truck"></i></div>
+                    <h3>Envío Gratis</h3>
+                    <p>En compras superiores a $150.000</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"><i class="fas fa-heart"></i></div>
+                    <h3>Diseños Exclusivos</h3>
+                    <p>Colecciones únicas para cada ocasión</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Productos Destacados -->
+    <section class="products" id="productos" data-section="products">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="productsTitle">Nuestra Colección</h2>
+                <p class="section-subtitle" id="productsSubtitle">Descubre piezas únicas que combinan elegancia y accesibilidad</p>
+            </div>
+
+            <!-- Filtros -->
+            <div class="filters" id="filtersContainer">
+                <button class="filter-btn active" data-filter="all">Todos</button>
+            </div>
+
+            <!-- Grid de Productos -->
+            <div class="products-grid" id="productsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Sobre Oro Laminado -->
+    <section class="about-gold" id="nosotros" data-section="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h2 class="section-title" id="aboutTitle">¿Por qué Oro Laminado 18K?</h2>
+                    <p class="about-text" id="aboutText">El oro laminado 18K es una técnica premium que fusiona una capa gruesa de oro puro sobre un metal base, creando piezas con la misma apariencia y brillo del oro macizo.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>75% de oro puro en composición</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Resistente a la oxidación y decoloración</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Hipoalergénico, libre de níquel</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Duración de 5 a 10 años con buen cuidado</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Precio 80% menor que el oro macizo</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="gold-comparison">
+                        <div class="comparison-card">
+                            <h4>Oro Macizo 18K</h4>
+                            <div class="comparison-price">$2.800.000</div>
+                            <p>Cadena 45cm</p>
+                        </div>
+                        <div class="comparison-card highlight">
+                            <div class="best-value">MEJOR VALOR</div>
+                            <h4>Oro Laminado 18K</h4>
+                            <div class="comparison-price">$185.000</div>
+                            <p>Cadena 45cm</p>
+                        </div>
+                        <div class="comparison-card">
+                            <h4>Baño de Oro</h4>
+                            <div class="comparison-price">$85.000</div>
+                            <p>Cadena 45cm</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="testimonials" id="testimonios" data-section="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" id="testimonialsTitle">Lo que dicen nuestras clientas</h2>
+                <p class="section-subtitle" id="testimonialsSubtitle">Historias reales de mujeres que brillan con Parra es Hermoso</p>
+            </div>
+            <div class="testimonials-grid" id="testimonialsGrid"></div>
+        </div>
+    </section>
+
+    <!-- Contacto / CTA -->
+    <section class="contact" id="contacto" data-section="contact">
+        <div class="container">
+            <div class="contact-content">
+                <h2 class="section-title" id="contactTitle">¿Tienes alguna pregunta?</h2>
+                <p class="contact-text" id="contactText">Estamos aquí para ayudarte. Escríbenos por WhatsApp y te atenderemos de inmediato.</p>
+                <a href="#" class="btn btn-whatsapp" id="contactWhatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Escríbenos por WhatsApp
+                </a>
+                <div class="social-links" id="socialLinks"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="#" class="logo">
+                        <span class="logo-icon"><i class="fas fa-gem"></i></span>
+                        <span class="logo-text" id="footerBusinessName">Parra es Hermoso</span>
+                    </a>
+                    <p class="footer-desc" id="footerDesc">Joyería en oro laminado 18K. Elegancia y calidad al alcance de todas.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links" id="footerCategories">
+                    <h4>Categorías</h4>
+                    <ul></ul>
+                </div>
+                <div class="footer-contact">
+                    <h4>Contacto</h4>
+                    <p id="footerPhone"><i class="fas fa-phone"></i> +57 300 123 4567</p>
+                    <p id="footerEmail"><i class="fas fa-envelope"></i> info@parraeshermoso.com</p>
+                    <p id="footerAddress"><i class="fas fa-map-marker-alt"></i> Colombia</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 <span id="footerCopyright">Parra es Hermoso</span>. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito Modal -->
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-overlay" id="cartOverlay"></div>
+        <div class="cart-sidebar">
+            <div class="cart-header">
+                <h3><i class="fas fa-shopping-bag"></i> Tu Carrito</h3>
+                <button class="cart-close" id="cartClose"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="cart-items" id="cartItems">
+                <div class="cart-empty">
+                    <i class="fas fa-shopping-bag"></i>
+                    <p>Tu carrito está vacío</p>
+                </div>
+            </div>
+            <div class="cart-footer" id="cartFooter" style="display: none;">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal">$0</span>
+                </div>
+                <a href="#" class="btn btn-whatsapp btn-full" id="checkoutWhatsapp" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Comprar por WhatsApp
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Flotante -->
+    <a href="#" class="whatsapp-float" id="whatsappFloat" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

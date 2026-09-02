@@ -1,0 +1,62 @@
+{
+  "business": {
+    "name": "Parra es Hermoso",
+    "description": "Joyería en oro laminado 18K de alta calidad a precios accesibles",
+    "whatsapp": "573001234567",
+    "email": "info@parraeshermoso.com",
+    "address": "Colombia"
+  },
+  "social": {
+    "instagram": "https://instagram.com/parraeshermoso",
+    "facebook": "https://facebook.com/parraeshermoso",
+    "tiktok": "https://tiktok.com/@parraeshermoso"
+  },
+  "design": {
+    "colors": {
+      "primary": "#c9a113",
+      "secondary": "#1a1a1a",
+      "accent": "#e91e63",
+      "background": "#4d4747",
+      "text": "#1a1a1a",
+      "backgroundAlt": "#f5f5f5"
+    },
+    "fonts": {
+      "display": "Playfair Display",
+      "body": "Poppins"
+    },
+    "logo": "",
+    "favicon": "",
+    "heroImage": ""
+  },
+  "sections": {
+    "hero": {
+      "visible": true,
+      "title": "Brilla con la elegancia del Oro 18K",
+      "subtitle": "Joyería en oro laminado de alta calidad a precios accesibles. Porque mereces lucir hermosa todos los días.",
+      "cta": "Explora nuestra colección"
+    },
+    "benefits": {
+      "visible": true
+    },
+    "products": {
+      "visible": true,
+      "title": "Nuestra Colección",
+      "subtitle": "Descubre piezas únicas que combinan elegancia y accesibilidad"
+    },
+    "about": {
+      "visible": true,
+      "title": "¿Por qué Oro Laminado 18K?",
+      "text": "El oro laminado 18K es una técnica premium que fusiona una capa gruesa de oro puro sobre un metal base, creando piezas con la misma apariencia y brillo del oro macizo."
+    },
+    "testimonials": {
+      "visible": true,
+      "title": "Lo que dicen nuestras clientas",
+      "subtitle": "Historias reales de mujeres que brillan con Parra es Hermoso"
+    },
+    "contact": {
+      "visible": true,
+      "title": "¿Tienes alguna pregunta?",
+      "text": "Estamos aquí para ayudarte. Escríbenos por WhatsApp y te atenderemos de inmediato."
+    }
+  }
+}

@@ -1,0 +1,134 @@
+[
+  {
+    "id": 1,
+    "name": "Collar Cadena Milano",
+    "description": "Elegante cadena tejido milano en oro laminado 18K",
+    "price": 185000,
+    "category": "collares",
+    "image": "",
+    "featured": true,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 2,
+    "name": "Collar Dije Corazón",
+    "description": "Delicado collar con dije de corazón en oro 18K",
+    "price": 145000,
+    "category": "collares",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 3,
+    "name": "Collar Eslabón Cubano",
+    "description": "Clásica cadena cubano de 8mm en oro laminado 18K",
+    "price": 220000,
+    "category": "collares",
+    "image": "",
+    "featured": true,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 4,
+    "name": "Pulsera Cadena Eternal",
+    "description": "Pulsera de eslabones en oro laminado 18K",
+    "price": 125000,
+    "category": "pulseras",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 5,
+    "name": "Pulsera Charm Bliss",
+    "description": "Pulsera con dijes personalizados en oro 18K",
+    "price": 165000,
+    "category": "pulseras",
+    "image": "",
+    "featured": true,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 6,
+    "name": "Pulsera Rígida Moderna",
+    "description": "Pulsera rígida con acabado pulido en oro 18K",
+    "price": 195000,
+    "category": "pulseras",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 7,
+    "name": "Aros Clásicos Circulares",
+    "description": "Aros circulares timeless en oro laminado 18K",
+    "price": 89000,
+    "category": "aretes",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 8,
+    "name": "Aretes Colgantes Elegance",
+    "description": "Aretes colgantes con cristal en oro 18K",
+    "price": 110000,
+    "category": "aretes",
+    "image": "",
+    "featured": true,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 9,
+    "name": "Stud Earrings Minimal",
+    "description": "Aretes tipo topping minimalistas en oro 18K",
+    "price": 75000,
+    "category": "aretes",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 10,
+    "name": "Anillo Solitario Brillante",
+    "description": "Anillo solitario con piedra en oro laminado 18K",
+    "price": 135000,
+    "category": "anillos",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 11,
+    "name": "Argollas Matrimonio",
+    "description": "Par de argollas en oro laminado 18K",
+    "price": 250000,
+    "category": "anillos",
+    "image": "",
+    "featured": true,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  },
+  {
+    "id": 12,
+    "name": "Anillo Compilation Stack",
+    "description": "Set de 3 anillos para combinar en oro 18K",
+    "price": 95000,
+    "category": "anillos",
+    "image": "",
+    "featured": false,
+    "active": true,
+    "createdAt": "2026-09-02T00:45:30.356Z"
+  }
+]
