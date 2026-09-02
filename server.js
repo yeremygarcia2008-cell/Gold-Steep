@@ -38,7 +38,9 @@ function readJSON(file) {
 }
 
 function writeJSON(file, data) {
-    const filePath = path.join(__dirname, 'data', file);
+    const dataDir = path.join(__dirname, 'data');
+    if (!fs.existsSync(dataDir)) fs.mkdirSync(dataDir, { recursive: true });
+    const filePath = path.join(dataDir, file);
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf8');
 }
 
@@ -421,6 +423,15 @@ function initializeData() {
         console.log('  ✓ Configuración inicial creada');
     }
 }
+
+// ========================================
+// ENSURE DIRECTORIES EXIST
+// ========================================
+const dirs = ['data', 'uploads', 'uploads/products', 'uploads/logo', 'uploads/banners'];
+dirs.forEach(dir => {
+    const dirPath = path.join(__dirname, dir);
+    if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, { recursive: true });
+});
 
 // ========================================
 // START SERVER
