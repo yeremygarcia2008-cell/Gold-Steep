@@ -1,9 +1,9 @@
 {
   "business": {
-    "name": "Parra es Hermoso",
+    "name": "Gold Steep",
     "description": "Joyería en oro laminado 18K de alta calidad a precios accesibles",
-    "whatsapp": "573001234567",
-    "email": "info@parraeshermoso.com",
+    "whatsapp": "573507139198",
+    "email": "info@GoldSteep.com",
     "address": "Colombia"
   },
   "social": {
@@ -13,12 +13,12 @@
   },
   "design": {
     "colors": {
-      "primary": "#c9a113",
-      "secondary": "#1a1a1a",
-      "accent": "#e91e63",
-      "background": "#4d4747",
-      "text": "#1a1a1a",
-      "backgroundAlt": "#f5f5f5"
+      "primary": "#ff0000",
+      "secondary": "#4dff00",
+      "accent": "#aeff00",
+      "background": "#ffffff",
+      "text": "#000000",
+      "backgroundAlt": "#ffd500"
     },
     "fonts": {
       "display": "Playfair Display",

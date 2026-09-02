@@ -26,6 +26,7 @@ app.use('/css', express.static(path.join(__dirname, 'public/css')));
 app.use('/js', express.static(path.join(__dirname, 'public/js')));
 app.use('/admin/css', express.static(path.join(__dirname, 'admin/css')));
 app.use('/admin/js', express.static(path.join(__dirname, 'admin/js')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // ========================================
 // HELPERS - Lectura/Escritura de JSON
